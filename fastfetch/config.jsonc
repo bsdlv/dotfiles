@@ -6,8 +6,8 @@
     "os",
     "host",
     "kernel",
-    //"uptime",
-    //"packages",
+    // "uptime",
+    // "packages",
     "shell",
     //"display",
     //"de",
@@ -33,7 +33,7 @@
   ],
   "logo": {
     "type": "kitty",
-    "source": "~/.config/fastfetch/mao2.png",
+    "source": "~/.config/fastfetch/mao.png",
     "width": 32,
     "height": 15
   }
