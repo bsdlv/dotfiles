@@ -27,14 +27,21 @@ font pango: Meslo LGM Nerd Font 12
 
 # set the mod key to the winkey:
 set $mod Mod4
+
+# startup
+exec --no-startup-id blueman-manager
+exec --no-startup-id xset s 600
+exec --no-startup-id xset dpms 7200 7200 7200
 exec_always --no-startup-id killall polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id feh --bg-scale ~/dotfiles/backgrounds/octospace.jpeg
 exec_always --no-startup-id picom --config ~/.config/picom/picom.conf -b
-exec --no-startup-id blueman-manager
-exec --no-startup-id betterlockscreen -off 3600 blur --blur .1 --time-format "%I:%M %p" --show-layout
-bindsym $mod+Shift+n exec betterlockscreen -l blur --blur .1 --time-format "%I:%M %p" --show-layout
-bindsym $mod+p exec rofi -show drun
+exec_always --no-startup-id xautolock -time 10 -locker "betterlockscreen -l --show-layout" &
+
+# custom binds
+bindsym $mod+Shift+n exec betterlockscreen -l --show-layout
+bindsym $mod+p exec rofi -show combi
+bindsym Print exec --no-startup-id flameshot gui
 #####################
 # workspace layout: #
 #####################
@@ -188,11 +195,8 @@ bindsym $mod+q kill
 # exit-menu
 bindsym $mod+Shift+e exec --no-startup-id ~/.config/i3/scripts/powermenu
 
-# Lock the system
 # lock with a picture:
 #bindsym $mod+l exec --no-startup-id i3lock -i  ~/.config/i3/i3-lock-screen.png -p default|win -t
-# lock by blurring the screen:
-
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -201,7 +205,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # keybinding in fancy rofi (automated):
-bindsym F1 exec --no-startup-id ~/.config/i3/scripts/keyhint-2
+# bindsym F1 exec --no-startup-id ~/.config/i3/scripts/keyhint-2
 # alternative
 # keybinding list in editor:
 # bindsym $mod+F1 exec --no-startup-id xed ~/.config/i3/keybindings
@@ -297,7 +301,7 @@ bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 ## App shortcuts
 bindsym $mod+w exec --no-startup-id /usr/bin/firefox
 bindsym $mod+n exec --no-startup-id /usr/bin/thunar
-bindsym Print exec --no-startup-id flameshot gui
+
 
 # Power Profiles menu switcher (rofi)
 #bindsym $mod+Shift+p exec --no-startup-id ~/.config/i3/scripts/power-profiles
