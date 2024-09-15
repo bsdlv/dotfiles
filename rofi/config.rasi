@@ -1,0 +1,18 @@
+configuration{
+	modi: "combi,windowcd,drun,run,filebrowser";
+	icon-theme: "Oranchelo";
+	show-icons: true;
+	terminal: "kitty";
+	drun-display-format: "{icon} {name}";
+	location: 0;
+	disable-history: false;
+	hide-scrollbar: true;
+	display-filebrowser:    "";
+	display-run:    "";
+	display-drun:   "";
+	display-windowcd: "";
+	display-combi:  "";
+	show-icons:     true;
+}
+
+@theme "~/.config/rofi/gruvbox-material.rasi"
