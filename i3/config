@@ -30,13 +30,12 @@ set $mod Mod4
 
 # startup
 exec --no-startup-id blueman-manager
-exec --no-startup-id xset s 600
-exec --no-startup-id xset dpms 7200 7200 7200
 exec_always --no-startup-id killall polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id feh --bg-scale ~/dotfiles/backgrounds/octospace.jpeg
 exec_always --no-startup-id picom --config ~/.config/picom/picom.conf -b
-exec_always --no-startup-id xautolock -time 10 -locker "betterlockscreen -l --show-layout" &
+exec_always --no-startup-id xautolock -time 10 -locker "betterlockscreen -l --off 3600 --show-layout" &
+exec_always --no-startup-id xset s off
 
 # custom binds
 bindsym $mod+Shift+n exec betterlockscreen -l --show-layout
@@ -412,10 +411,10 @@ exec --no-startup-id ~/.screenlayout/monitor.sh
 
 # set powersavings for display:
 # exec --no-startup-id xset s 1800
-# exec --no-startup-id xset -dpms
+exec --no-startup-id xset -dpms
 
 # disable power saving (for example if using xscreensaver)
-exec --no-startup-id xset -dpms
+# exec_always --no-startup-id xset dpms 0 0 3600
 
 # use xautolock to use autosuspend rules for mobile devices
 # https://wiki.archlinux.org/title/Session_lock#xautolock
@@ -590,7 +589,7 @@ bar {
 ## rofi bindings fancy application menu ($mod+d /F9 optional disabled)
 
 bindsym $mod+d exec --no-startup-id rofi -modi drun -show drun \
-		-config ~/.config/rofi/rofidmenu.rasi
+		-config ~/.config/rofi/catppuccin-mocha.rasi
 
 #bindsym F9 exec --no-startup-id rofi -modi drun -show drun \
 #		-config ~/.config/rofi/rofidmenu.rasi
@@ -598,7 +597,7 @@ bindsym $mod+d exec --no-startup-id rofi -modi drun -show drun \
 ## rofi bindings for window menu ($mod+t /F10 optional disabled)
 
 bindsym $mod+t exec --no-startup-id rofi -show window \
-		-config ~/.config/rofi/rofidmenu.rasi
+		-config ~/.config/rofi/catppuccin-mocha.rasi
 
 #bindsym F10 exec --no-startup-id rofi -show window \
 #		-config ~/.config/rofi/rofidmenu.rasi

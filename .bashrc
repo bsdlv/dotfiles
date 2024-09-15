@@ -13,7 +13,7 @@ alias ports='sudo netstat -vatnp'
 alias sd='shutdown -h now'
 alias rb='reboot'
 alias gadd="git add ."
-alias gpush="git push"
+alias gpush="git push -u origin main"
 alias doc="cd $HOME/Documents"
 alias proj="cd $HOME/projects"
 alias dl="cd $HOME/Downloads"
@@ -21,6 +21,7 @@ alias cfg="cd $HOME/.config"
 alias flsh="cd $HOME/projects/c/flash"
 alias dots="cd $HOME/dotfiles/"
 alias school="cd $HOME/school/"
+export PULSE_SERVER=unix:/run/user/$(id -u)/pulse/native
 export EDITOR='nvim'
 alias bashrc="$EDITOR $HOME/.bashrc"
 fastfetch
