@@ -18,17 +18,16 @@ alias doc="cd $HOME/Documents"
 alias proj="cd $HOME/projects"
 alias dl="cd $HOME/Downloads"
 alias cfg="cd $HOME/.config"
-alias flsh="cd $HOME/projects/c/flash"
 alias dots="cd $HOME/dotfiles/"
 alias school="cd $HOME/school/"
-alias torrent="transmission-cli --bind-address-ipv4=proton0"
 alias vpn="sudo protonvpn c --fastest"
-alias vpndc="sudo protonvpn d"
+alias vpnoff="sudo protonvpn d"
+alias v="nvim"
 export PULSE_SERVER=unix:/run/user/$(id -u)/pulse/native
 export EDITOR='nvim'
+export BROWSER='firefox'
 alias bashrc="$EDITOR $HOME/.bashrc"
 eval "$(starship init bash)"
-eval $(/usr/bin/gnome-keyring-daemon --start)
 export SSH_AUTH_SOCK
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -39,3 +38,4 @@ source <(ng completion script)
 
 # Created by `pipx` on 2024-09-27 13:34:30
 export PATH="$PATH:/home/bsdlv/.local/bin"
+
