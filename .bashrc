@@ -13,7 +13,7 @@ alias ports='sudo netstat -vatnp'
 alias sd='shutdown -h now'
 alias rb='reboot'
 alias gadd="git add ."
-alias gpush="git push -u origin main"
+alias gpush="git push origin -u main"
 alias doc="cd $HOME/Documents"
 alias proj="cd $HOME/projects"
 alias dl="cd $HOME/Downloads"
@@ -35,7 +35,7 @@ export NVM_DIR="$HOME/.nvm"
 
 # Load Angular CLI autocompletion.
 source <(ng completion script)
-
+. "$HOME/.asdf/asdf.sh"
 # Created by `pipx` on 2024-09-27 13:34:30
 export PATH="$PATH:/home/bsdlv/.local/bin"
 
