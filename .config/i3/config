@@ -399,7 +399,7 @@ exec --no-startup-id dex --autostart --environment i3
 
 # start a script to setup displays
 # uncomment the next line, use arandr to setup displays and save the file as monitor:
-exec_always --no-startup-id xrandr --output HDMI-0 --primary --output HDMI-1 --left-of HDMI-0
+exec_always --no-startup-id xrandr --output HDMI-0 --primary --output HDMI-1 ---of HDMI-0
 # set wallpaper
 # exec --no-startup-id sleep 2 && nitrogen --restore
 # exec --no-startup-id sleep 1
@@ -583,16 +583,14 @@ bar {
 
 ## rofi bindings fancy application menu ($mod+d /F9 optional disabled)
 
-bindsym $mod+d exec --no-startup-id rofi -modi drun -show drun \
-		-config ~/.config/rofi/catppuccin-mocha.rasi
+bindsym $mod+d exec --no-startup-id rofi -show drun theme -nord
 
-#bindsym F9 exec --no-startup-id rofi -modi drun -show drun \
-#		-config ~/.config/rofi/rofidmenu.rasi
+# bindsym F9 exec --no-startup-id rofi -modi drun -show drun \
+# #		-config ~/.config/rofi/rofidmenu.rasi
 
 ## rofi bindings for window menu ($mod+t /F10 optional disabled)
 
-bindsym $mod+t exec --no-startup-id rofi -show window \
-		-config ~/.config/rofi/catppuccin-mocha.rasi
+bindsym $mod+t exec --no-startup-id rofi -show window theme -nord
 
 #bindsym F10 exec --no-startup-id rofi -show window \
 #		-config ~/.config/rofi/rofidmenu.rasi
